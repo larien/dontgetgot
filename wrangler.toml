@@ -1,7 +1,7 @@
 # Cloudflare Pages + Functions. See README for KV setup.
 # Must match the Pages project name in Cloudflare Dashboard (Workers & Pages → your project).
 # If your project is named differently, change this to that exact name.
-name = "dontgetgot"
+name = "operationx"
 pages_build_output_dir = "./dist"
 compatibility_date = "2024-01-01"
 

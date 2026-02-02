@@ -51,11 +51,12 @@ Keep using **http://localhost:5173** in the browser; Vite will forward `/api` re
    - **Build output directory:** `dist`
    - **Root directory:** leave default (repo root).
    - **Environment variables:** none required for basic run.
+   - **Deploy command:** If the UI allows leaving it blank, do that—Cloudflare will upload the build and serve `/functions` from the repo. If a deploy command is required, use: `npx wrangler pages deploy ./dist --project-name=operationx` (the project name must match the Pages project name in the dashboard; see `wrangler.toml`). When using a custom deploy command, create an API token with **Account → Cloudflare Pages → Edit** ([API Tokens](https://dash.cloudflare.com/profile/api-tokens)), then add it to the project's build settings as an environment variable: name `CLOUDFLARE_API_TOKEN`, value = that token.
 
    Pages will automatically detect and run **Functions** from the `/functions` directory (no extra config).
 
 4. **Deploy**
-   - Save and deploy. Pages will run `npm run build`, publish the `dist` output, and serve `/functions` as serverless endpoints under the same host (e.g. `https://<project>.pages.dev`).
+   - Save and deploy. Pages will run `npm run build`, then either upload automatically or run your deploy command. The app is served at e.g. `https://<project>.pages.dev`.
 
 5. **Confirm**
    - Visit the app; enter a name, nickname, or email on the login page.
