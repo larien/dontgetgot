@@ -1,0 +1,8 @@
+# Cloudflare Pages + Functions. See README for KV setup.
+name = "operation-x"
+pages_build_output_dir = "./dist"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "ROOMS_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
